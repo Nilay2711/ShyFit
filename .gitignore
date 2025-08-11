@@ -1,0 +1,6 @@
+.env
+.venv/
+datasets/
+not_needed_files/
+node_modules/
+.final_dataset_cleaned.jsonl

@@ -1,0 +1,234 @@
+<!-- Y:\Future Stuff and All\ShyFit\index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShyFit Workout Planner</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <!-- Hero Section -->
+<section class="hero">
+  <div class="blob-bg"></div>
+  <div class="hero-content">
+    <h1>ShyFit</h1>
+    <p>Finally, a workout that's all about you. </p>
+    <p>Forget crowded gyms and awkward conversations. We give you a real workout, made just for you, completely free.</p>
+    <p>Work out at home or in the gym. Wherever you are on your fitness journey, we'll help you get there at your own pace.</p>
+    <button id="scrollToForm">Build My Plan</button>
+  </div>
+</section>
+
+
+  <!-- How It Works -->
+<section class="how-it-works">
+  <div class="content">
+    <h2 class="section-title">How It Works</h2>
+    <div class="steps">
+      <div class="step">
+        <h3>1. Fill the form</h3>
+        <p>Tell us your fitness goals, level, and equipment.</p>
+      </div>
+      <div class="step">
+        <h3>2. Generate your plan</h3>
+        <p>We’ll craft a personalized plan with clear instructions.</p>
+      </div>
+      <div class="step">
+        <h3>3. Start working out</h3>
+        <p>No sign-ups. No paywalls. Just start moving.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <section id="formSection">
+    <form id="workoutForm" class="form-container" novalidate>
+      <h2 class="form-heading">Customize Your Workout Plan</h2>
+
+      <div class="form-grid">
+        <!-- First / Last Name -->
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input type="text" id="firstName" name="firstName" required />
+          <div class="required-message" id="firstNameError">First name is required</div>
+        </div>
+
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input type="text" id="lastName" name="lastName" required placeholder=" " />
+          <div class="required-message" id="lastNameError">Last name is required</div>
+        </div>
+
+        <!-- Age -->
+        <!-- Age Group -->
+        <div class="form-group option-group">
+          <label>Age Group</label>
+          <div class="options">
+            <input type="radio" id="age-teen" name="ageGroup" value="10-19" required hidden>
+            <label for="age-teen" class="option-pill">🧒 10–19</label>
+
+            <input type="radio" id="age-young" name="ageGroup" value="20-29" hidden>
+            <label for="age-young" class="option-pill">👱‍♂️ 20–29</label>
+
+            <input type="radio" id="age-adult" name="ageGroup" value="30-39" hidden>
+            <label for="age-adult" class="option-pill">🧔 30–39</label>
+
+            <input type="radio" id="age-mid" name="ageGroup" value="40-49" hidden>
+            <label for="age-mid" class="option-pill">👨‍🦳 40–49</label>
+
+            <input type="radio" id="age-senior" name="ageGroup" value="50+" hidden>
+            <label for="age-senior" class="option-pill">🧓 50+</label>
+          </div>
+          <div class="required-message" id="ageError">Please select your age</div>
+        </div>
+
+
+        <!-- Gender Pills -->
+        <div class="form-group option-group">
+          <label>Gender</label>
+          <div class="options">
+            <input type="radio" id="gender-male" name="gender" value="Male" required hidden />
+            <label for="gender-male" class="option-pill">♂ Male</label>
+
+            <input type="radio" id="gender-female" name="gender" value="Female" hidden />
+            <label for="gender-female" class="option-pill">♀ Female</label>
+
+            <input type="radio" id="gender-other" name="gender" value="Other" hidden />
+            <label for="gender-other" class="option-pill">⚧ Other</label>
+          </div>
+          <div class="required-message" id="genderError">Please select your gender</div>
+        </div>
+
+        <!-- Height / Weight -->
+        <div class="form-group">
+          <label for="height">Height (cm)</label>
+          <input type="number" id="height" name="height" required placeholder=" " />
+          <div class="required-message" id="heightError">Height is required</div>
+        </div>
+        <div class="form-group">
+          <label for="weight">Weight (kg)</label>
+          <input type="number" id="weight" name="weight" required placeholder=" " />
+          <div class="required-message" id="weightError">Weight is required</div>
+        </div>
+
+        <!-- Fitness Goal -->
+        <div class="form-group option-group">
+          <label>Fitness Goal</label>
+          <div class="options">
+            <input type="radio" id="goal-fatloss" name="goal" value="Fat Loss" required hidden />
+            <label for="goal-fatloss" class="option-pill">🔥 Fat Loss</label>
+
+            <input type="radio" id="goal-muscle" name="goal" value="Muscle Gain" hidden />
+            <label for="goal-muscle" class="option-pill">💪 Muscle Gain</label>
+
+            <input type="radio" id="goal-flexibility" name="goal" value="Flexibility" hidden />
+            <label for="goal-flexibility" class="option-pill">🧘 Flexibility</label>
+
+            <input type="radio" id="goal-endurance" name="goal" value="Endurance" hidden />
+            <label for="goal-endurance" class="option-pill">🏃 Endurance</label>
+          </div>
+          <div class="required-message" id="goalError">Please select your Fitness Goal</div>
+        </div>
+
+        <!-- Target Muscles -->
+        <div class="form-group option-group">
+          <label>Target Muscles</label>
+          <div class="options">
+            <input type="checkbox" id="chest" name="muscles[]" value="Chest" hidden />
+            <label for="chest" class="option-pill">💥 Chest</label>
+
+            <input type="checkbox" id="biceps" name="muscles[]" value="Biceps" hidden />
+            <label for="biceps" class="option-pill">💪 Biceps</label>
+
+            <input type="checkbox" id="legs" name="muscles[]" value="Legs" hidden />
+            <label for="legs" class="option-pill">🦵 Legs</label>
+
+            <input type="checkbox" id="core" name="muscles[]" value="Core" hidden />
+            <label for="core" class="option-pill">🔥 Core</label>
+
+            <input type="checkbox" id="fullbody" name="muscles[]" value="Full Body" hidden />
+            <label for="fullbody" class="option-pill">🌐 Full Body</label>
+          </div>
+          <div class="required-message" id="fullbodyError">Please select your Target Mucles</div>
+        </div>
+
+        <!-- Fitness Level -->
+        <div class="form-group option-group">
+          <label>Fitness Level</label>
+          <div class="options">
+            <input type="radio" id="level-beginner" name="level" value="Beginner" required hidden />
+            <label for="level-beginner" class="option-pill">🌱 Beginner</label>
+
+            <input type="radio" id="level-intermediate" name="level" value="Intermediate" hidden />
+            <label for="level-intermediate" class="option-pill">⚡ Intermediate</label>
+
+            <input type="radio" id="level-advanced" name="level" value="Advanced" hidden />
+            <label for="level-advanced" class="option-pill">🔥 Advanced</label>
+          </div>
+          <div class="required-message" id="levelError">Please select your Fitness Level</div>
+        </div>
+
+        <div class="form-group option-group">
+          <label>Location</label>
+          <div class="options">
+            <input type="radio" id="location-home" name="location" value="Home" required hidden />
+            <label for="location-home" class="option-pill">🏠 Home</label>
+
+            <input type="radio" id="location-gym" name="location" value="Gym" hidden />
+            <label for="location-gym" class="option-pill">🏋️ Gym</label>
+          </div>
+          <div class="required-message" id="locationError">Please select your Location</div>
+        </div>
+
+        <!-- Duration / Days / Location -->
+        <div class="form-group">
+         <label for="duration"> Duration  <i class="fas fa-info-circle info-tooltip" data-bs-toggle="tooltip" data-bs-placement="top" title="How long you're willing to work out each day."></i> </label>
+          <input type="number" id="duration" name="duration" required placeholder=" " />
+          <div class="required-message" id="durationError">Duration is required</div>
+          <div class="warning-message" id="durationLimitError">There are only 24 hours in a day.</div>
+          <div class="warning-message" id="ZeroDurationLimitError">You need to work out for at least one hour.</div>
+        </div>
+        <div class="form-group">
+          <label for="days">Days per Week <i class="fas fa-info-circle info-tooltip" data-bs-toggle="tooltip" data-bs-placement="top" title="How many days can you realistically train each week?"></i></label>
+          <input type="number" id="days" name="days" required placeholder=" " />
+          <div class="required-message" id="daysError">Days is required</div>
+          <div class="warning-message" id="daysLimitError">There are only 7 days in a week.</div>
+          <div class="warning-message" id="ZeroDaysLimitError">You need to work out at least once a week.</div>
+       
+        </div>
+      </div>
+      <button type="submit" id="final_formSubmit" >Generate My Plan</button>
+
+    </div>
+
+    </form>
+  </section>
+
+<div id="loader" style="display: none;" class="sexy-loader-container">
+  <div class="sexy-spinner"></div>
+  <p>Generating your personalized plan...</p>
+</div>
+
+
+  <!-- Results -->
+  <section id="planOutput" style="display: none" class="output-section">
+    <h2>Your Workout Plan</h2>
+    <div id="workout-container"></div>
+  </section>
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
+

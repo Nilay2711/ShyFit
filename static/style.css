@@ -1,0 +1,478 @@
+/* Y:\Future Stuff and All\ShyFit\style.css */
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background: #d6d3d1;
+  color: #333;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 600;
+}
+
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 6rem 2rem 5rem;
+  background: linear-gradient(135deg, #1f1c2c 0%, #928dab 100%);
+  clip-path: ellipse(75% 100% at 50% 0%);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.blob-bg {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1000px;
+  height: 1000px;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: #e0e0e0;
+  margin-bottom: 1.25rem;
+}
+
+.hero button {
+  background: #7b7fa1;
+  color: #fff;
+  border: none;
+  padding: 0.9rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  margin-top: 2rem;
+}
+
+.hero button:hover {
+  background: #51546d;
+  transform: translateY(-2px);
+}
+
+
+/* Form Section */
+#formSection {
+  padding: 4rem 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.form-container {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  padding: 2.5rem;
+  border-radius: 1rem;
+}
+
+.form-heading {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.75rem;
+}
+
+/* Grid */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* Base Text Input Styling */
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.8);
+  color: #333;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+  font-family: inherit;
+}
+
+/* Focus State */
+.form-group input:focus {
+  outline: none;
+  border-color: #5a67d8;
+  box-shadow: 0 0 0 3px rgba(90, 103, 216, 0.15);
+  background: #fff;
+}
+
+/* Label */
+.form-group label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+/* Gender */
+.gender-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.gender-options {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.gender-icon {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 2px solid #ccc;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gender-icon input {
+  display: none;
+}
+
+.gender-icon input:checked + span,
+.gender-icon:has(input:checked) {
+  border-color: #5a67d8;
+  background-color: #5a67d8;
+  color: #fff;
+}
+
+/* Submit */
+#final_formSubmit {
+  margin-top: 2rem;
+  width: 100%;
+  padding: 1rem;
+  background-color: #5a67d8;
+  color: #fff;
+  border: none;
+  border-radius: 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#final_formSubmit:hover {
+  background-color: #434190;
+}
+
+/* How It Works Section */
+.how-it-works {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.how-it-works .section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2e2e4d;
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+}
+
+.how-it-works .section-title::after {
+  content: "";
+  display: block;
+  width: 60%;
+  height: 4px;
+  background: #7b7fa1;
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+
+.form-heading::after {
+  content: "";
+  display: block;
+  width: 30%;
+  height: 4px;
+  background: #7b7fa1;
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+.how-it-works .steps {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .how-it-works .steps {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.how-it-works .step {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  flex: 1;
+  transition: transform 0.3s ease;
+}
+
+.how-it-works .step:hover {
+  transform: translateY(-5px);
+}
+
+.how-it-works .step h3 {
+  color: #444;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.how-it-works .step p {
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+
+.steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.step {
+  background: #f3f3f3;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid #ccc;
+  transition: transform 0.3s ease;
+}
+
+.step:hover {
+  transform: translateY(-5px);
+}
+
+.step h3 {
+  margin-bottom: 0.5rem;
+  color: #5a67d8;
+}
+
+.step p {
+  color: #666;
+}
+
+/* Output Section */
+.output-section {
+  padding: 3rem 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.output-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+#workout-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.workout-day {
+  background: #f3f3f3;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  border: 1px solid #ccc;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+th,
+td {
+  padding: 0.75rem;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #e0e0e0;
+  color: #111;
+}
+
+tr:nth-child(even) {
+  background-color: #f7f7f7;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Refine option group spacing */
+.option-group {
+  margin-top: 1rem;
+}
+
+/* Align options better */
+.option-group .options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+  justify-content: flex-start;
+}
+
+/* Pill tweaks for uniformity */
+.option-pill {
+  padding: 0.6rem 1.25rem;
+  font-size: 0.95rem;
+  min-width: 100px;
+  text-align: center;
+  cursor:pointer;
+}
+
+.option-pill:hover {
+  background-color: #e0e0e0;
+}
+
+input[type="radio"]:checked + .option-pill,
+input[type="checkbox"]:checked + .option-pill {
+  background-color: #5a67d8;
+  border-color: #5a67d8;
+  color: #fff;
+  font-weight: 600;
+  transform: scale(1.05);
+}
+
+/* Specific tweaks for gender icons */
+.gender-options {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.gender-pill {
+  min-width: 120px;
+  justify-content: center;
+}
+
+/* Sexy Loader */
+.sexy-loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.sexy-loader-container p {
+  margin-top: 1rem;
+  font-weight: 500;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.sexy-spinner {
+  border: 6px solid rgba(0, 0, 0, 0.1);
+  border-top: 6px solid #5a67d8;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  will-change: transform;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+.info-tooltip {
+  margin-left: 6px;
+  cursor: pointer;
+  color: #888; 
+  font-size: 0.9rem;
+  vertical-align: middle;
+}
+.required-message {
+  color: #e53935;
+  font-size: 0.85rem;
+  margin-top: 4px;
+  display: none;
+}
+
+.warning-message{
+  color: #e53935;
+  font-size: 0.85rem;
+  margin-top: 4px;
+  display: none;
+}
+
+input[disabled] + .option-pill {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor:not-allowed;
+}
