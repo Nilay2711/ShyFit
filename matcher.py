@@ -4,9 +4,13 @@ import json
 import numpy as np
 import sys
 from sentence_transformers import SentenceTransformer
+import os
 
-INDEX_PATH = "Y:/Future Stuff and All/ShyFit/faiss.index"
-META_PATH = "Y:/Future Stuff and All/ShyFit/metadata.json"
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+INDEX_PATH = os.path.join(BASE_DIR, "data", "faiss.index")
+META_PATH = os.path.join(BASE_DIR, "data", "metadata.json")
+
 
 # Cache model to avoid loading on every call
 _model_cache = {}
