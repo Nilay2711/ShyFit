@@ -1,4 +1,3 @@
-# Y:/Future Stuff and All/ShyFit/core.py
 
 from matcher import search_workouts
 # from openai import OpenAI

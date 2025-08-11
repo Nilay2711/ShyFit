@@ -1,4 +1,3 @@
-# Y:/Future Stuff and All/ShyFit/matcher.py
 
 import faiss
 import json

@@ -1,4 +1,3 @@
-# Y:\Future Stuff and All\ShyFit\app.py
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from core import generate_workout_plan

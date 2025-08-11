@@ -1,4 +1,3 @@
-// Y:\Future Stuff and All\ShyFit\script.js
 
 $(document).on("click", "#scrollToForm", function (e) {
   e.preventDefault();
