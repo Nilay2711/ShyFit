@@ -5,3 +5,4 @@ python-dotenv==1.0.1
 requests==2.32.3
 faiss-cpu==1.11.0.post1
 sentence-transformers==5.0.0
+openai==0.28.0
