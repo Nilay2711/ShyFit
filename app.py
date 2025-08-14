@@ -1,33 +1,22 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 from core import generate_workout_plan
 
 app = Flask(__name__)
-CORS(app)  # Allow frontend (like React/Vite) to access this API
+CORS(app)
 
 @app.route("/")
+def index():
+    return render_template("index.html")  # 👈 Serve your HTML page here
+
+@app.route("/health")
 def health_check():
     return jsonify({"status": "ok", "message": "ShyFit API is up and running!"})
 
-# @app.route("/api/workout-plan", methods=["POST"])
 @app.route("/api/workout-plan", methods=["POST"])
-
-
 def workout_plan():
     try:
         user_data = request.get_json()
-        # user_data = {
-        # "age": 24,
-        # "gender": "male",
-        # "height": 100,
-        # "weight": 180,
-        # "goal": "fat loss",
-        # "muscles": "full body",
-        # "level": "beginner",
-        # "duration": 60,
-        # "days": 6,
-        # "location": "Home"
-        # }
 
         if not user_data:
             return jsonify({"error": "Missing JSON data"}), 400
