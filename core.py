@@ -35,7 +35,9 @@ def get_user_input(user_data):
         location (str): Gym/Home
     """
 
-    age = user_data.get("age")
+    fname = user_data.get("firstName")
+    lname = user_data.get("lastName")
+    age = user_data.get("ageGroup")
     gender = user_data.get("gender")
     height = user_data.get("height")
     weight = user_data.get("weight")
