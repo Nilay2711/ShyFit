@@ -1,4 +1,3 @@
-# Y:\Future Stuff and All\ShyFit\data_loader.py
 
 import json
 import faiss
