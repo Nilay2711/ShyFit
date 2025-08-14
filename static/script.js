@@ -56,7 +56,7 @@ $(document).on("click", "#final_formSubmit", function (e) {
   };
 
   $.ajax({
-    url: "http://localhost:5000/api/workout-plan",
+    url: "/api/workout-plan",
     type: "POST",
     contentType: "application/json",
     data: JSON.stringify(userData),
