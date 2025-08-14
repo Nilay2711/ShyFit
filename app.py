@@ -7,7 +7,7 @@ CORS(app)
 
 @app.route("/")
 def index():
-    return render_template("index.html")  # 👈 Serve your HTML page here
+    return render_template("index.html") 
 
 @app.route("/health")
 def health_check():
